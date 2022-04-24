@@ -1,17 +1,13 @@
-import React, { useEffect, useState } from 'react';
+
+import useServices from '../../../useServices/useServices';
 import Service from '../Service/Service';
 import './Services.css';
 
 const Services = () => {
 
-    const [services, setServices] = useState([]);
+    const [services] = useServices([]);
 
-    useEffect(() => {
-        const url = `http://localhost:5000/service`;
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setServices(data));
-    }, [])
+
 
     return (
         <div id="services" className='container'>
